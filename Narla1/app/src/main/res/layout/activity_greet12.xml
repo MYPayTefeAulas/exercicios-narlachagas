@@ -13,6 +13,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginTop="120dp"
         android:text="Greeter:"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:text="1"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/txtGreeter"
         app:layout_constraintTop_toTopOf="@+id/txtGreeter" />
 
@@ -30,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:text="Button"
+        android:text="trocar"
         app:layout_constraintBottom_toBottomOf="@+id/txtGreeter"
         app:layout_constraintStart_toEndOf="@+id/txtNumGreeter"
         app:layout_constraintTop_toTopOf="@+id/txtGreeter"
@@ -40,10 +42,9 @@
         android:id="@+id/btImprimir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Imprimir"
+        android:layout_marginTop="136dp"
+        android:text="Imprimir próximo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtGreeter" />
 
@@ -52,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        app:layout_constraintTop_toBottomOf="@+id/btImprimir"
-        tools:layout_editor_absoluteX="205dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btImprimir" />
 </androidx.constraintlayout.widget.ConstraintLayout>
