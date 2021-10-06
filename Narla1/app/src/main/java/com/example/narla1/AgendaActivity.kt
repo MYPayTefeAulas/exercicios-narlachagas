@@ -6,12 +6,7 @@ import com.example.narla1.databinding.ActivityAgendaBinding
 
 class AgendaActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAgendaBinding
-    private var nome = ""
-    private var numero = 0
-    private var listaDePessoas = mutableListOf<Pessoas>()
-    private var indiceAtual = 0
     private var agenda = Agenda()
-//    private var nomeAtual =
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,35 +14,20 @@ class AgendaActivity : AppCompatActivity() {
         binding = ActivityAgendaBinding.inflate(layoutInflater)
 
 
-
-        binding.btSalvar.setOnClickListener {
-            binding.txtAviso.text = salvarContato()
-            nome = binding.txtNome.text.toString()
-            binding.txtNome.text.clear()
-            numero = binding.txtNumero.text.toString().toInt()
-            binding.txtNumero.text.clear()
-
+        binding.btSalvarContato.setOnClickListener {
+            val nome = binding.txtNomeContato.text.toString()
+            val telefone = binding.txtNumeroContato.text.toString()
+            val novoContato = Pessoas(nome, telefone)
+            agenda.salvarContato(novoContato)
+            binding.txtSaidaContato.text = "Nome: ${nome}  Telefone: ${telefone}"
         }
-
-
-
-
-//        binding.btProximo.setOnClickListener {
-//            if (nome == nome)
-//
-//        }
-
+        binding.btProximoContato.setOnClickListener {
+            binding.txtNomeContato.setText(agenda.proximoNome())
+            binding.txtNumeroContato.setText(agenda.proximoTelefone())
+        }
 
         setContentView(binding.root)
 
-
-    }
-    fun salvarContato (): String{
-        if (indiceAtual >= listaDePessoas.size )
-            indiceAtual = 0
-        val pessoaAtual = listaDePessoas [indiceAtual]
-        indiceAtual++
-        return "Nome: ${pessoaAtual.nome}, Número: ${pessoaAtual.numero}"
 
     }
 }

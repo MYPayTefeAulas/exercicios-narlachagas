@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtAviso"
+        android:id="@+id/txtSaidaContato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -29,56 +29,62 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/txtNome"
+        android:id="@+id/txtNumeroContato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="Telefone"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAviso" />
-
-    <EditText
-        android:id="@+id/txtNumero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNome" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeContato" />
 
     <Button
-        android:id="@+id/bt_Salvar"
+        android:id="@+id/btSalvarContato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="104dp"
+        android:backgroundTint="#4C654D"
         android:text="salvar"
-        app:layout_constraintEnd_toStartOf="@+id/btDeletar"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
+        app:layout_constraintEnd_toStartOf="@+id/btDeletarContato"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumeroContato" />
 
     <Button
-        android:id="@+id/btDeletar"
+        android:id="@+id/btDeletarContato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:backgroundTint="#DF0808"
         android:text="deletar"
-        app:layout_constraintStart_toEndOf="@+id/btProximo"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
+        app:layout_constraintStart_toEndOf="@+id/btProximoContato"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumeroContato" />
 
     <Button
-        android:id="@+id/btProximo"
+        android:id="@+id/btProximoContato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
+        android:backgroundTint="#2F64CF"
         android:text="próximo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNumeroContato" />
+
+    <EditText
+        android:id="@+id/txtNomeContato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
