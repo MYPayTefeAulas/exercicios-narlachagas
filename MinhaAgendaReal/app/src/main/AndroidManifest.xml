@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MinhaAgendaReal">
         <activity
+            android:name="com.example.minhaagendareal2.EditarContato"
+            android:exported="true" />
+        <activity
             android:name="com.example.minhaagendareal2.AgendaV2"
             android:exported="true" />
         <activity

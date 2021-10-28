@@ -1,5 +1,6 @@
 package com.example.minhaagendareal2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -8,6 +9,7 @@ import com.example.minhaagendareal.databinding.ActivityAgendaV2Binding
 
 class AgendaV2 : AppCompatActivity() {
     private lateinit var binding: ActivityAgendaV2Binding
+    private lateinit var adapter: ContatosAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,13 +17,14 @@ class AgendaV2 : AppCompatActivity() {
 
         binding= ActivityAgendaV2Binding.inflate(layoutInflater)
 
+        adapter = ContatosAdapter(mutableListOf(), :: onBtEditarClick)
+
         binding.rvContatos.layoutManager = LinearLayoutManager(this)
         binding.rvContatos.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
-        binding.rvContatos.adapter = ContatosAdapter(Agenda.listadeContatos)
-
+        binding.rvContatos.adapter = adapter
+        adapter.swapData(Agenda.listadeContatos)
 
         setContentView(binding.root)
-
 
     }
     private fun inicializarLista() {
@@ -45,4 +48,14 @@ class AgendaV2 : AppCompatActivity() {
         )
     }
 
+    fun onBtEditarClick(indiceLista: Int){
+        val intent = Intent (this, EditarContato::class.java)
+        intent.putExtra("indiceContato", indiceLista)
+        startActivity(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adapter.swapData(Agenda.listadeContatos)
+    }
 }
