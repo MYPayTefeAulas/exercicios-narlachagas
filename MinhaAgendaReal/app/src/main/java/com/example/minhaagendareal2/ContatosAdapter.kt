@@ -29,10 +29,12 @@ class ContatosAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.txtNome.text = listadeContatos[position].nome
         holder.binding.txtTelefone.text = listadeContatos[position].telefone
-        holder.binding.root.setOnClickListener {
+        holder.binding.btEditaContato.setOnClickListener {
             onBtEditarClick(position)
         }
     }
+
+
     fun swapData(novaListasContatos: List<ContatoV2>) {
         listadeContatos.clear()
         listadeContatos.addAll(novaListasContatos)
